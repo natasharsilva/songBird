@@ -1,0 +1,30 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: #F1DDB9;
+} 
+
+.main {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lyricsBox {
+    width: 500px;
+    height: 250px;
+    background-color: #C5AE84;
+}
+
+.wordsBox {
+    width: 500px;
+    height: 100px;
+    background-color: #DEBA77;
+}
+
