@@ -1,3 +1,13 @@
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext('2d');
+const CANVAS_WIDTH = canvas.width;
+const CANVAS_HEIGHT = canvas.height;
+
+const $inputValue = document.querySelector('.inputValue')
+
+let frame = 0; // the frame counter
+let newSong = new Lyrics()
+
 var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -19,22 +29,30 @@ var tag = document.createElement('script');
         });
       }
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+    //   // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        //event.target.playVideo();
+        if (event.data == YT.PlayerState.PLAYING) {
+            // incomplete lyrics start showing
+            
+        } else if (event.data === YT.PlayerState.PAUSED) {
+           // stop lyrics
+        } else if (event.data === YT.PlayerState.ENDED) {
+
+        }
+    }
 
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-      function onPlayerStateChange(event) {
+    function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
             // incomplete lyrics start showing
             
-        } else if(event.data === YT.PlayerState.PAUSED) {
+        } else if (event.data === YT.PlayerState.PAUSED) {
            // stop lyrics
-        } else if(event.data === YT.PlayerState.ENDED) {
+        } else if (event.data === YT.PlayerState.ENDED) {
 
         }
       }
@@ -43,19 +61,32 @@ var tag = document.createElement('script');
         player.stopVideo();
       }
 
-      document.onkeydown = event => {
-          // when ENTER key pressed check input value
-            //detect if it is the correct word
-                //increase points
-                //video resume
+    function animation(){
+        updateEverything();
+        drawLyrics(ctx);
+        window.requestAnimationFrame(animation);
+    }
+    animation()
+      
+    function drawLyrics(ctx) {
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        newSong.draw(ctx);
+        }
+    
+    function updateEverything() {
+        frame++;
+        newSong.update()
+    }
+
+    document.onkeydown = event => {
+        if (event.keyCode === 13) { // enter
+        // when ENTER key pressed 
+            // check input value
+            // detect if it is the correct word
+            newSong.check();
+            // increase points
+            // video resume
             // else
-                // just resume video
-
-        if (event.keyCode === 37) { // left
-          this.vx = -10
-        }
-        if (event.keyCode === 39) { // left
-          this.vx = 10
-        }
-      }
-
+            // just resume video
+          }
+      }      

@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Music game</title>
+    <title>Songbird</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <h1>Guess the lyrics</h1>
+        <h1>Songbird</h1>
     <section class="main">
         <div id="player"></div>
         <div class ="box">
         <div class="wordsBox"></div>
-        <div class="lyricsBox"></div>
-        <input type="text" placeholder="Type here">
+        <div class="lyricsBox">
+            <canvas width="500px" height="250px"></canvas>
+        </div>
+        <input class="inputValue" type="text" placeholder="Type the missing word here">
         </div>
     </section>
     
