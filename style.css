@@ -9,6 +9,7 @@ canvas {
 h1 {
     text-align: center;
     color: black;
+    margin: 30px;
 }
 
 body {
@@ -16,24 +17,15 @@ body {
 } 
 
 .main {
-    margin: 20px;
+    margin: 60px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .lyricsBox {
-    width: 500px;
-    height: 250px;
+    width: 550px;
+    height: 300px;
     background-color: white;
-}
-
-.wordsBox {
-    width: 500px;
-    height: 100px;
-    background-color: white;
-}
-
-input {
-    width: 100%;
+    margin: 50px;
 }
 
