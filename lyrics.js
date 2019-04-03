@@ -3,6 +3,7 @@ class Lyrics {
         this.width = CANVAS_WIDTH;
         this.height = CANVAS_HEIGHT;
         this.y = 0;
+        this.score = 0;
         this.missingIcon = "♫";
         // this.missingIcon = "______";
         this.missingWords = ["roads", "call", "dove", "sleeps", "cannon", "banned", "blowin", "answer", "mountain",
@@ -69,6 +70,7 @@ class Lyrics {
             if (this.currentText === this.missingWords[this.missingWordsIndex]) {
                 console.log("YES!")
                 this.correctAnswers.push(true)
+                this.score += 10;
             }
             else {
                 console.log("NO!")
@@ -82,7 +84,7 @@ class Lyrics {
     
     update() {
         if (true) {
-            this.y += 0.1;
+            this.y += 0.08;
         } else {
             // stop
             this.y;

@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const CANVAS_WIDTH = canvas.width;
 const CANVAS_HEIGHT = canvas.height;
 
-const $inputValue = document.querySelector('.inputValue')
+const $scoreValue = document.querySelector('.scoreValue')
 
 let frame = 0; // the frame counter
 let newSong = new Lyrics()
@@ -47,9 +47,7 @@ function onPlayerReady(event) {
 //    the player should play for six seconds and then stop.
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
-        // incomplete lyrics start showing
-        animation()
-
+        animation();
     } else if (event.data === YT.PlayerState.PAUSED) {
         // stop lyrics
     } else if (event.data === YT.PlayerState.ENDED) {
@@ -74,6 +72,7 @@ function drawLyrics(ctx) {
 
 function updateEverything() {
     frame++;
+    $scoreValue.innerHTML = `Score: ${newSong.score}`
     newSong.update()
 }
 
