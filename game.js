@@ -2,6 +2,7 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d');
 const CANVAS_WIDTH = canvas.width;
 const CANVAS_HEIGHT = canvas.height;
+var isStopped = true
 
 const $scoreValue = document.querySelector('.scoreValue')
 
@@ -31,12 +32,10 @@ function onYouTubeIframeAPIReady() {
 // YOUTUBE VIDEO
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    //event.target.playVideo();
+    // event.target.playVideo();
     if (event.data == YT.PlayerState.PLAYING) {
-        // incomplete lyrics start showing
-
+        event.target.playVideo();
     } else if (event.data === YT.PlayerState.PAUSED) {
-        // stop lyrics
     } else if (event.data === YT.PlayerState.ENDED) {
 
     }
@@ -47,22 +46,25 @@ function onPlayerReady(event) {
 //    the player should play for six seconds and then stop.
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
+        isStopped = false;
         animation();
     } else if (event.data === YT.PlayerState.PAUSED) {
-        // stop lyrics
+        isStopped = true;
     } else if (event.data === YT.PlayerState.ENDED) {
-
+        // stop lyrics
     }
 }
 
-function stopVideo() {
-    player.stopVideo();
-}
+// function stopVideo() {
+//     player.stopVideo();
+// }
 
 function animation() {
-    updateEverything();
-    drawLyrics(ctx);
-    window.requestAnimationFrame(animation);
+    if(!isStopped){
+        updateEverything();
+        drawLyrics(ctx);
+        window.requestAnimationFrame(animation);
+    }
 }
 
 function drawLyrics(ctx) {
@@ -85,15 +87,9 @@ document.onkeydown = event => {
     if (key.length === 1) {
         newSong.addCharacter(event.key)
     }
-
     if (event.keyCode === 13) { // enter
         newSong.missingWordsIndex++;
         newSong.currentLyricIndex++;
         newSong.correctAnswers.push(false);
     }
 }
-
-        // increase points
-        // resume video
-        // else
-        // just resume video

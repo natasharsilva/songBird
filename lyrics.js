@@ -5,7 +5,6 @@ class Lyrics {
         this.y = 0;
         this.score = 0;
         this.missingIcon = "♫";
-        // this.missingIcon = "______";
         this.missingWords = ["roads", "call", "dove", "sleeps", "cannon", "banned", "blowin", "answer", "mountain",
         "washed", "some", "allowed", "turn", "pretend", "wind", "blowin", "look", "sky",
         "ears", "people", "deaths", "many", "friend", "wind"],
@@ -83,11 +82,8 @@ class Lyrics {
     }
     
     update() {
-        if (true) {
+        if (!isStopped) {
             this.y += 0.08;
-        } else {
-            // stop
-            this.y;
         }
     }
 }   
