@@ -25,7 +25,7 @@ class Lyrics {
 
     draw(ctx) {
         ctx.save();
-        ctx.font = "18px Arial";
+        ctx.font = "18px Merriweather";
         ctx.textAlign = "center";
         for (let i = 0, j = this.y; i < this.lyrics.length; i++, j-=25){
             if (i < this.currentLyricIndex) {

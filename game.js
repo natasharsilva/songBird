@@ -2,12 +2,13 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d');
 const CANVAS_WIDTH = canvas.width;
 const CANVAS_HEIGHT = canvas.height;
-var isStopped = true
+let isStopped = true
 
 const $scoreValue = document.querySelector('.scoreValue')
 
 let frame = 0; // the frame counter
-let newSong = new Lyrics()
+let newSong = new Lyrics();
+// let bg = new Background();
 
 var tag = document.createElement('script');
 
@@ -69,6 +70,7 @@ function animation() {
 
 function drawLyrics(ctx) {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    // bg.draw(ctx);
     newSong.draw(ctx);
 }
 
