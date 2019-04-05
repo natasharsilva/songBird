@@ -1,23 +1,14 @@
-const canvas = document.getElementById('canvas')
+const canvas1 = document.getElementById('canvas')
 const ctx = canvas.getContext('2d');
 const CANVAS_WIDTH = canvas.width;
 const CANVAS_HEIGHT = canvas.height;
 let isStopped = true
 
 const $scoreValue = document.querySelector('.scoreValue')
-const $a = document.getElementsByTagName('a')
 
 let frame = 0; // the frame counter
-let newSong = new Lyrics(dylan)
-
-// function determineSong($a) {
-// if ($a.hasClass('dylan')) {
-//     newSong = new Lyrics(dylan)
-// } else if ($a.hasClass('adele')) {
-//     newSong = new Lyrics(adele)
-// }}
-
-// newSong = determineSong();
+let newSong = new Lyrics(adele);
+// let bg = new Background();
 
 var tag = document.createElement('script');
 
@@ -27,11 +18,12 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
 var player;
+var player2;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '390',
         width: '640',
-        videoId: 'vWwgrjjIMXA',
+        videoId: '-Y2ugxRPGOA',
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -58,10 +50,8 @@ function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
         isStopped = false;
         animation();
-        canvas.focus();
     } else if (event.data === YT.PlayerState.PAUSED) {
         isStopped = true;
-        canvas.focus();
     } else if (event.data === YT.PlayerState.ENDED) {
         // stop lyrics
     }

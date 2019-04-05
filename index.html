@@ -7,6 +7,7 @@
     <title>SongBird</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Merriweather|Playfair+Display" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <section id="welcome">
@@ -14,36 +15,21 @@
         <p>Ready to sing along? Choose a song and hit play!</p>
         <container class="menu">
             <div>
-                <a href="#song1"><img src="./images/bobdylan.png" alt="Blowin' in the wind" width="170"></a><br>
-                <a href="#song1">Blowin' in the Wind</a>
+                <a href="dylan.html" class="dylan"><img src="./images/bobdylan.png" alt="Blowin' in the wind" width="170"></a><br>
+                <a href="dylan.html" class="dylan">Blowin' in the Wind</a>
             </div>
-            <div>
-                <a href="#song2"><img src="./images/adele.jpg" alt="Someone like you" width="170"></a><br>
-                <a href="#song2">Someone like you</a>
+            <div class="adele">
+                <a href="adele.html" class="adele"><img src="./images/adele.jpg" alt="Someone like you" width="170"></a><br>
+                <a href="adele.html" class="adele">Someone Like You</a>
             </div>
-            <div>
+            <!-- <div>
                 <a href="#song3"><img src="./images/bobdylan.png" alt="Blowin' in the wind" width="170"></a><br>
                 <a href="#song3">Song 3</a>
-            </div>
+            </div> -->
         </container>
     </section>
-
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <section id="song1">
-        <h1>Blowin' in the Wind</h1>
-        <h4>Play the video to start</h4>
-    <section class="main">
-        <div id="player"></div>
-        <div class ="box">
-        <div class="lyricsBox">
-            <p class="scoreValue">Score: 0</p>
-            <canvas width="550" height="300"></canvas>
-        </div>
-        </div>
-    </section>
-    </section>
     
-    <script src="background.js"></script>
+    <script src="database.js"></script>
     <script src="lyrics.js"></script>
     <script src="game.js"></script>
 </body>
