@@ -33,3 +33,19 @@ let adele = {
         `Never mind I'll find ${this.missingIcon} like you`, `I wish ${this.missingIcon} but the best for you too`, `Don't forget me, I beg, I'll ${this.missingIcon} you said`,
         `Sometimes it ${this.missingIcon} in love`, `But sometimes ${this.missingIcon} hurts instead`]
     }
+
+    let beatles = {
+        missingWords: ["somebody", "anybody", "know", "younger", "anybody", "gone", "changed", "opened", "feeling", "appreciate", "ground",
+    "please", "changed", "independence", "insecure", "like", "can", "appreciate", "ground", "Wont", "younger", "anybody", "gone", "assured",
+    "changed", "opened", "feeling", "appreciate", "back", "help"],
+
+        lyrics: [`Help! I need ${this.missingIcon}`, `Help! Not just ${this.missingIcon}`, `Help! You ${this.missingIcon} I need someone`,
+        `When I was ${this.missingIcon} so much younger than today`,`I never needed ${this.missingIcon}'s help in any way`,
+        `But now these days are ${this.missingIcon}, I'm not so self assured`, `Now I find I've ${this.missingIcon} my mind`, `I've ${this.missingIcon} up the doors`,
+        `Help me if you can I'm ${this.missingIcon} down`, `And I do ${this.missingIcon} you being 'round`, `Help me get my feet back on the ${this.missingIcon}`,
+        `Won't you please, ${this.missingIcon}, help me?`, `And now my life has ${this.missingIcon} in so many ways`, `My ${this.missingIcon} seems to vanish in the haze`, `But every now and then I feel so ${this.missingIcon}`,
+        `I know that I just need you ${this.missingIcon} I've never done before`, `Help me if you ${this.missingIcon} I'm feeling down`,`And I do ${this.missingIcon} you being 'round`,
+        `Help me get my feet back on the ${this.missingIcon}`, `${this.missingIcon} you please, please, help me?`, `When I was ${this.missingIcon} so much younger than today`,`I never needed ${this.missingIcon}'s help in any way`,
+        `But now these days are ${this.missingIcon}`, `I'm not so self ${this.missingIcon}`, `Now I find I've ${this.missingIcon} my mind`, `I've ${this.missingIcon} up the doors`, `Help me if you can I'm ${this.missingIcon} down`,
+        `And I do ${this.missingIcon} you being 'round`, `Help me get my feet ${this.missingIcon} on the ground`, `Won't you please, please, ${this.missingIcon} me, help me, help me?`]
+    }

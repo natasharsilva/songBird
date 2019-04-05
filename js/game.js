@@ -8,6 +8,7 @@ const $scoreValue = document.querySelector('.scoreValue')
 const $a = document.getElementsByTagName('a')
 
 let frame = 0; // the frame counter
+let bg = new Background()
 let newSong = new Lyrics(dylan)
 
 // function determineSong($a) {
@@ -77,7 +78,7 @@ function animation() {
 
 function drawLyrics(ctx) {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    // bg.draw(ctx);
+    bg.draw(ctx);
     newSong.draw(ctx);
 }
 

@@ -7,6 +7,7 @@ let isStopped = true
 const $scoreValue = document.querySelector('.scoreValue')
 
 let frame = 0; // the frame counter
+let bg = new Background()
 let newSong = new Lyrics(adele);
 // let bg = new Background();
 
@@ -67,7 +68,7 @@ function animation() {
 
 function drawLyrics(ctx) {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    // bg.draw(ctx);
+    bg.draw(ctx);
     newSong.draw(ctx);
 }
 
